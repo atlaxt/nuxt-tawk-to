@@ -1,0 +1,14 @@
+{
+  "exclude": [
+    "dist",
+    "node_modules",
+    "playground",
+  ],
+  "compilerOptions": {
+    "module": "node16",
+    "baseUrl": ".",
+    "paths": {
+      "@types": ["src/types/index.ts"]
+    }
+  }
+}

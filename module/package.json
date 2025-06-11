@@ -1,0 +1,51 @@
+{
+  "name": "nuxt-tawk-to",
+  "version": "1.0.0",
+  "description": "Nuxt 3 module for integrating Tawk.to live chat widget.",
+  "repository": "https://github.com/atlaxt/nuxt-tawk-to",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+  ".": {
+    "import": "./dist/module.mjs",
+    "types": "./dist/module.d.mts"
+  },
+  "./types": {
+    "import": "./dist/runtime/types.js",
+    "types": "./dist/runtime/types.d.ts"
+  }
+},
+  "main": "./dist/module.mjs",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.17.3",
+    "@tawk.to/tawk-messenger-vue-3": "1.0.3"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^2.4.0",
+    "@nuxt/eslint-config": "^1.3.1",
+    "@nuxt/module-builder": "^1.0.1",
+    "@nuxt/schema": "^3.17.3",
+    "@nuxt/test-utils": "^3.18.0",
+    "@types/node": "latest",
+    "changelogen": "^0.6.1",
+    "eslint": "^9.26.0",
+    "nuxt": "^3.17.3",
+    "typescript": "~5.8.3",
+    "vitest": "^3.1.3",
+    "vue-tsc": "^2.2.10"
+  }
+}
