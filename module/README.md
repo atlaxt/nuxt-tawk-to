@@ -45,6 +45,18 @@ export default defineNuxtConfig({
 
 ---
 
+## 🧾 TypeScript Support
+
+This module includes full TypeScript support.
+
+You can import the module config type like this:
+
+```ts
+import type { TawkToConfig } from 'nuxt-tawk-to/types'
+```
+
+---
+
 ## 🔍 Runtime Config Support
 
 These options are injected into Nuxt runtime config and are accessible in plugins or composables if needed:
