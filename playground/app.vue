@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import Logo from '../assets/tawk-to.png'
+import TawkTo from '../assets/tawk-to.png'
+
+useHead({ title: 'nuxt-tawk-to playground' })
 </script>
 
 <template>
@@ -17,7 +19,7 @@ import Logo from '../assets/tawk-to.png'
     user-select: none;"
   >
     <img
-      :src="Logo"
+      :src="TawkTo"
       style="
       height: 200px;
       "
