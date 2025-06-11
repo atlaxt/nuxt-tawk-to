@@ -27,6 +27,16 @@ pnpm add nuxt-tawk-to
 
 ---
 
+## 🌍 Live Playground
+
+You can preview the module in action at:
+
+👉 [nuxt-tawk-to.atlaxt.me](https://nuxt-tawk-to.atlaxt.me)
+
+This playground demonstrates a working integration of the module with basic configuration. Feel free to explore it to see how it behaves inside a live Nuxt 3 environment.
+
+---
+
 ## 🛠️ Usage
 
 Add the module to your `nuxt.config.ts`:

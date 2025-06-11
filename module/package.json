@@ -1,7 +1,19 @@
 {
   "name": "nuxt-tawk-to",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Nuxt 3 module for integrating Tawk.to live chat widget.",
+  "keywords": [
+  "nuxt",
+  "nuxt3",
+  "nuxt-module",
+  "tawk",
+  "tawkto",
+  "live-chat",
+  "chat-widget",
+  "tawk.to",
+  "nuxt-chat",
+  "nuxt-tawk-to"
+  ],
   "repository": "https://github.com/atlaxt/nuxt-tawk-to",
   "license": "MIT",
   "type": "module",
