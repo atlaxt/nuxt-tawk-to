@@ -1,8 +1,18 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['../src/module'],
+  compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
+  modules: [
+    'nuxt-tawk-to',
+  ],
   tawkTo: {
-    propertyId: 'yourPropertyId',
-    widgetId: 'yourWidgetId',
-  },
+    /**
+     * ┌─────────────────────────────────────────────────────────────┐
+     * │ ⚠️ These credentials are for testing purposes only. 
+     * │ Feel free to use them while evaluating the module.  
+     * └─────────────────────────────────────────────────────────────┘
+     */
+    propertyId: '68496650ddf9cd19094b4530',
+    widgetId: '1itfbfagd',
+  }
 })
