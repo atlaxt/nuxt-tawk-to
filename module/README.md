@@ -34,7 +34,6 @@ Add the module to your `nuxt.config.ts`:
 ```ts
 export default defineNuxtConfig({
   modules: ['nuxt-tawk-to'],
-
   tawkTo: {
     propertyId: 'your-tawk-property-id',
     widgetId: 'your-widget-id'
@@ -72,6 +71,13 @@ Under the hood, the module:
 |--------------|----------|----------|--------------------------------------------|
 | `propertyId` | `string` | ✅ Yes   | Your Tawk.to property ID                   |
 | `widgetId`   | `string` | ✅ Yes   | Your Tawk.to widget ID                     |
+
+---
+
+## 🧩 Compatibility
+
+- ✅ Nuxt 3+
+- ❌ Nuxt 2 is not supported
 
 ---
 

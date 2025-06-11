@@ -1,5 +1,7 @@
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
-import type { TawkToConfig } from './types/index.js'
+import type { TawkToConfig } from './types.js'
+
+export type { TawkToConfig } from './types.js'
 
 export default defineNuxtModule<TawkToConfig>({
   meta: {

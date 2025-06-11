@@ -1,10 +1,5 @@
 <script setup lang="ts">
 import Logo from '../assets/tawk-to.png'
-import type {TawkToConfig} from 'nuxt-tawk-to/types'
-const tawkToConfig: TawkToConfig = {
-  propertyId: '',
-  widgetId: '',
-}
 </script>
 
 <template>
@@ -15,12 +10,11 @@ const tawkToConfig: TawkToConfig = {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #202020;
+    background-color: #151515;
     position: fixed;
     left: 0;
     top: 0;
-    user-select: none;
-    "
+    user-select: none;"
   >
     <img
       :src="Logo"

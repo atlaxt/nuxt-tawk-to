@@ -8,11 +8,11 @@ export default defineNuxtConfig({
   tawkTo: {
     /**
      * ┌─────────────────────────────────────────────────────────────┐
-     * │ ⚠️ These credentials are for testing purposes only. 
-     * │ Feel free to use them while evaluating the module.  
+     * │ ⚠️ These credentials are for testing purposes only.
+     * │ Feel free to use them while evaluating the module.
      * └─────────────────────────────────────────────────────────────┘
      */
     propertyId: '68496650ddf9cd19094b4530',
     widgetId: '1itfbfagd',
-  }
+  },
 })

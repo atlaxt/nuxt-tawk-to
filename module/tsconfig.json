@@ -6,9 +6,5 @@
   ],
   "compilerOptions": {
     "module": "node16",
-    "baseUrl": ".",
-    "paths": {
-      "@types": ["src/types/index.ts"]
-    }
   }
 }
