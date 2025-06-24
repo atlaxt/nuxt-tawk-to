@@ -14,5 +14,8 @@ export default defineNuxtConfig({
      */
     propertyId: '68496650ddf9cd19094b4530',
     widgetId: '1itfbfagd',
+    embedId: '',
+    basePath: '',
+    autoStart: true,
   },
 })
