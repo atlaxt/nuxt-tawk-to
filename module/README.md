@@ -89,10 +89,14 @@ Under the hood, the module:
 
 ## 📦 Module Options
 
-| Option       | Type     | Required | Description                                |
-|--------------|----------|----------|--------------------------------------------|
-| `propertyId` | `string` | ✅ Yes   | Your Tawk.to property ID                   |
-| `widgetId`   | `string` | ✅ Yes   | Your Tawk.to widget ID                     |
+| Option               | Type      | Required | Description                                                                 |
+|----------------------|-----------|----------|-----------------------------------------------------------------------------|
+| `propertyId`         | `string`  | ✅ Yes   | Your Tawk.to property ID                                                    |
+| `widgetId`           | `string`  | ✅ Yes   | Your Tawk.to widget ID                                                      |
+| `embedId`            | `string`  | ❌ No    | Optional embed ID for advanced embedding scenarios                         |
+| `basePath`           | `string`  | ❌ No    | Base path for widget route if needed (used with routing or path config)    |
+| `autoStart`          | `boolean` | ❌ No    | Whether the widget should automatically load (default is `true`)           |
+
 
 ---
 
