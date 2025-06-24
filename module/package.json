@@ -1,6 +1,6 @@
 {
   "name": "nuxt-tawk-to",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Nuxt 3 module for integrating Tawk.to live chat widget.",
   "keywords": [
   "nuxt",

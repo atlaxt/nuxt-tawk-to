@@ -18,5 +18,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(TawkMessengerVue, {
     propertyId: config.propertyId,
     widgetId: config.widgetId,
+    embedId: config.embedId,
+    basePath: config.basePath,
+    autoStart: config.autoStart,
   })
 })

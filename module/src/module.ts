@@ -12,6 +12,9 @@ export default defineNuxtModule<TawkToConfig>({
   defaults: {
     propertyId: '',
     widgetId: '',
+    embedId: '',
+    basePath: '',
+    autoStart: true,
   },
   setup(options, nuxt) {
     nuxt.options.runtimeConfig.public.tawkModule = options
