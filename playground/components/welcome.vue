@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import TawkTo from '../../assets/tawk-to.png'
+
+const showTawk = inject<() => void>('showWidget') ?? (() => {})
+const hideTawk = inject<() => void>('hideWidget') ?? (() => {})
+
+const tawkIsOpen = ref<boolean>(false)
+onMounted(() => {
+  tawkIsOpen.value = useRuntimeConfig().public.tawkModule.autoStart
+})
 </script>
 
 <template>
@@ -9,6 +17,7 @@ import TawkTo from '../../assets/tawk-to.png'
       width: 100%;
       height: 100dvh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       background-color: #151515;
@@ -55,6 +64,24 @@ import TawkTo from '../../assets/tawk-to.png'
           npm ↗
         </a>
       </div>
+    </div>
+    <div style="display: flex; gap: 12px; margin-top: 24px;">
+      <button
+        :disabled="tawkIsOpen" @click="() => {
+          showTawk()
+          tawkIsOpen = true
+        }"
+      >
+        show
+      </button>
+      <button
+        :disabled="!tawkIsOpen" @click="() => {
+          hideTawk()
+          tawkIsOpen = false
+        }"
+      >
+        hide
+      </button>
     </div>
   </div>
 </template>
