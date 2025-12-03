@@ -2,7 +2,7 @@
 
 Easily integrate the [Tawk.to](https://www.tawk.to/) live chat widget into your Nuxt 3 application using this lightweight module.
 
-<!-- ![OG](https://raw.githubusercontent.com/atlaxt/nuxt-tawk-to/refs/heads/master/docs/app/assets/table.gif) -->
+![OG](https://raw.githubusercontent.com/atlaxt/nuxt-tawk-to/refs/heads/master/docs/app/assets/nuxt-tawk-to-og_image.jpg)
 ---
 
 ## Official Documentation
