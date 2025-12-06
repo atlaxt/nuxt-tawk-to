@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Analytics } from '@vercel/analytics/nuxt'
+
 const { seo } = useAppConfig()
 
 const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'))
@@ -15,7 +17,13 @@ useHead({
   ],
   htmlAttrs: {
     lang: 'en'
-  }
+  },
+  script: [
+    {
+      src: 'https://embed.tawk.to/68496650ddf9cd19094b4530/1itfbfagd',
+      async: true
+    }
+  ]
 })
 
 useSeoMeta({
@@ -29,6 +37,7 @@ provide('navigation', navigation)
 
 <template>
   <UApp>
+    <Analytics />
     <NuxtLoadingIndicator />
 
     <AppHeader />

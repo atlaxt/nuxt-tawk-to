@@ -53,7 +53,7 @@ export default defineNuxtConfig({
   llms: {
     domain: 'https://nuxt-tawk-to.atlaxt.me/',
     title: 'Nuxt TawkTo',
-    description: 'A template for building documentation with Nuxt UI and Nuxt Content.',
+    description: 'This is the full documentation for the Nuxt TawkTo.',
     full: {
       title: 'Nuxt TawkTo - Full Documentation',
       description: 'This is the full documentation for the Nuxt TawkTo.'

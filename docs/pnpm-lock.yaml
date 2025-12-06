@@ -26,6 +26,9 @@ importers:
       '@nuxt/ui':
         specifier: ^4.2.1
         version: 4.2.1(@babel/parser@7.28.5)(@nuxt/content@3.8.2(better-sqlite3@12.4.6)(magicast@0.5.1))(change-case@5.4.4)(db0@0.3.4(better-sqlite3@12.4.6))(embla-carousel@8.6.0)(ioredis@5.8.2)(magicast@0.5.1)(typescript@5.9.3)(vite@7.2.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue-router@4.6.3(vue@3.5.23(typescript@5.9.3)))(vue@3.5.23(typescript@5.9.3))(zod@3.25.76)
+      '@vercel/analytics':
+        specifier: ^1.6.1
+        version: 1.6.1(vue-router@4.6.3(vue@3.5.23(typescript@5.9.3)))(vue@3.5.23(typescript@5.9.3))
       better-sqlite3:
         specifier: ^12.4.6
         version: 12.4.6
@@ -36,8 +39,8 @@ importers:
         specifier: 0.1.3
         version: 0.1.3(magicast@0.5.1)
       nuxt-tawk-to:
-        specifier: ^1.2.0
-        version: 1.2.0(magicast@0.5.1)(typescript@5.9.3)
+        specifier: ^1.3.1
+        version: 1.3.1(magicast@0.5.1)(nuxt@4.2.1(@parcel/watcher@2.5.1)(@types/node@24.9.1)(@vue/compiler-sfc@3.5.23)(better-sqlite3@12.4.6)(db0@0.3.4(better-sqlite3@12.4.6))(eslint@9.39.1(jiti@2.6.1))(ioredis@5.8.2)(lightningcss@1.30.2)(magicast@0.5.1)(optionator@0.9.4)(rollup@4.52.5)(terser@5.44.0)(typescript@5.9.3)(vite@7.2.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue-tsc@3.1.5(typescript@5.9.3))(yaml@2.8.1))(typescript@5.9.3)
     devDependencies:
       '@nuxt/eslint':
         specifier: ^1.10.0
@@ -1827,6 +1830,32 @@ packages:
     resolution: {integrity: sha512-lrW200hZdbfRtztbygyaq/6jP6AKE8qQN2KvPcJ+x7wiD038YtnYtZ82IMNJ69GJibV7bwL3y9FgK+5w/pYt6g==}
     cpu: [x64]
     os: [win32]
+
+  '@vercel/analytics@1.6.1':
+    resolution: {integrity: sha512-oH9He/bEM+6oKlv3chWuOOcp8Y6fo6/PSro8hEkgCW3pu9/OiCXiUpRUogDh3Fs3LH2sosDrx8CxeOLBEE+afg==}
+    peerDependencies:
+      '@remix-run/react': ^2
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@remix-run/react':
+        optional: true
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
 
   '@vercel/nft@0.30.3':
     resolution: {integrity: sha512-UEq+eF0ocEf9WQCV1gktxKhha36KDs7jln5qii6UpPf5clMqDc0p3E7d9l2Smx0i9Pm1qpq4S4lLfNl97bbv6w==}
@@ -3894,8 +3923,10 @@ packages:
   nuxt-llms@0.1.3:
     resolution: {integrity: sha512-+LaySko5UnlZw37GoTbsRX6KBFccSAzh6ENAYjV+xlVwsG8lSMz+IWnE7z5rstyVxHiX3Rx62M9JVut4jotJ3w==}
 
-  nuxt-tawk-to@1.2.0:
-    resolution: {integrity: sha512-pnxnOyaTov+U1kyW24XBt5qTLPJSJgrKrHMHr2wWKAnM4u+kl1TDSOccgbXoX3xpOvFicrT91weJGSdXxMcBzw==}
+  nuxt-tawk-to@1.3.1:
+    resolution: {integrity: sha512-4wxL8gyE0eAV+JLDGEjwy4aVT3RBdbpeMY8/bkcqVRmvIwjPA4WxlRvUm9fQ8LZ/lJpn2oai4FQNylhniO03Tw==}
+    peerDependencies:
+      nuxt: '>=3.0.0'
 
   nuxt@4.2.1:
     resolution: {integrity: sha512-OE5ONizgwkKhjTGlUYB3ksE+2q2/I30QIYFl3N1yYz1r2rwhunGA3puUvqkzXwgLQ3AdsNcigPDmyQsqjbSdoQ==}
@@ -7467,6 +7498,11 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.11.1':
     optional: true
 
+  '@vercel/analytics@1.6.1(vue-router@4.6.3(vue@3.5.23(typescript@5.9.3)))(vue@3.5.23(typescript@5.9.3))':
+    optionalDependencies:
+      vue: 3.5.23(typescript@5.9.3)
+      vue-router: 4.6.3(vue@3.5.23(typescript@5.9.3))
+
   '@vercel/nft@0.30.3(rollup@4.52.5)':
     dependencies:
       '@mapbox/node-pre-gyp': 2.0.0
@@ -9964,10 +10000,11 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  nuxt-tawk-to@1.2.0(magicast@0.5.1)(typescript@5.9.3):
+  nuxt-tawk-to@1.3.1(magicast@0.5.1)(nuxt@4.2.1(@parcel/watcher@2.5.1)(@types/node@24.9.1)(@vue/compiler-sfc@3.5.23)(better-sqlite3@12.4.6)(db0@0.3.4(better-sqlite3@12.4.6))(eslint@9.39.1(jiti@2.6.1))(ioredis@5.8.2)(lightningcss@1.30.2)(magicast@0.5.1)(optionator@0.9.4)(rollup@4.52.5)(terser@5.44.0)(typescript@5.9.3)(vite@7.2.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue-tsc@3.1.5(typescript@5.9.3))(yaml@2.8.1))(typescript@5.9.3):
     dependencies:
       '@nuxt/kit': 3.19.3(magicast@0.5.1)
       '@tawk.to/tawk-messenger-vue-3': 1.0.3(typescript@5.9.3)
+      nuxt: 4.2.1(@parcel/watcher@2.5.1)(@types/node@24.9.1)(@vue/compiler-sfc@3.5.23)(better-sqlite3@12.4.6)(db0@0.3.4(better-sqlite3@12.4.6))(eslint@9.39.1(jiti@2.6.1))(ioredis@5.8.2)(lightningcss@1.30.2)(magicast@0.5.1)(optionator@0.9.4)(rollup@4.52.5)(terser@5.44.0)(typescript@5.9.3)(vite@7.2.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.0)(yaml@2.8.1))(vue-tsc@3.1.5(typescript@5.9.3))(yaml@2.8.1)
     transitivePeerDependencies:
       - magicast
       - typescript
