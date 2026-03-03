@@ -17,13 +17,7 @@ useHead({
   ],
   htmlAttrs: {
     lang: 'en'
-  },
-  script: [
-    {
-      src: 'https://embed.tawk.to/68496650ddf9cd19094b4530/1itfbfagd',
-      async: true
-    }
-  ]
+  }
 })
 
 useSeoMeta({
