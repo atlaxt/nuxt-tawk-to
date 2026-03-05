@@ -23,12 +23,21 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
 
 const title = page.value.seo?.title || page.value.title
 const description = page.value.seo?.description || page.value.description
+const pageUrl = `https://nuxt-tawk-to.atlaxt.me${route.path}`
 
 useSeoMeta({
   title,
   ogTitle: title,
   description,
-  ogDescription: description
+  ogDescription: description,
+  ogUrl: pageUrl,
+  ogType: 'article'
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: pageUrl }
+  ]
 })
 
 const headline = computed(() => findPageHeadline(navigation?.value, page.value?.path))

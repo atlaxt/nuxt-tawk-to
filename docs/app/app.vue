@@ -23,7 +23,11 @@ useHead({
 useSeoMeta({
   titleTemplate: `%s - ${seo?.siteName}`,
   ogSiteName: seo?.siteName,
-  twitterCard: 'summary_large_image'
+  ogType: 'website',
+  ogImage: '/nuxt-tawk-to-og_image.jpg',
+  twitterCard: 'summary_large_image',
+  twitterImage: '/nuxt-tawk-to-og_image.jpg',
+  twitterSite: '@atlaxt'
 })
 
 provide('navigation', navigation)

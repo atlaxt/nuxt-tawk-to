@@ -13,6 +13,46 @@ export default defineNuxtConfig({
     enabled: true
   },
 
+  app: {
+    head: {
+      meta: [
+        { name: 'robots', content: 'index, follow' },
+        { name: 'keywords', content: 'nuxt tawk-to, tawk.to nuxt, nuxt live chat, nuxt-tawk-to, tawk to nuxt 3, tawk to nuxt 4, tawk.to module, live chat widget nuxt, nuxt 3 tawk.to integration, nuxt 4 tawk.to integration, vue tawk.to, tawk.to chat nuxt' },
+        { name: 'author', content: 'atlaxt' },
+        { name: 'theme-color', content: '#22c55e' }
+      ],
+      link: [
+        { rel: 'canonical', href: 'https://nuxt-tawk-to.atlaxt.me/' }
+      ],
+      script: [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'SoftwareApplication',
+            'name': 'nuxt-tawk-to',
+            'alternateName': ['nuxt tawk-to', 'tawk.to nuxt module', 'Tawk.to Nuxt'],
+            'description': 'The easiest way to add Tawk.to live chat to any Nuxt application. Works with Nuxt 3 and Nuxt 4. Lightweight module with full TypeScript support, SSR-safe auto-injection, and the full Tawk.to JavaScript API.',
+            'applicationCategory': 'DeveloperApplication',
+            'operatingSystem': 'Any',
+            'url': 'https://nuxt-tawk-to.atlaxt.me/',
+            'downloadUrl': 'https://www.npmjs.com/package/nuxt-tawk-to',
+            'sameAs': [
+              'https://github.com/atlaxt/nuxt-tawk-to',
+              'https://www.npmjs.com/package/nuxt-tawk-to'
+            ],
+            'author': {
+              '@type': 'Person',
+              'name': 'atlaxt',
+              'url': 'https://atlaxt.me'
+            },
+            'keywords': 'nuxt tawk-to, tawk.to, nuxt module, live chat, nuxt 3, nuxt 4, tawk.to nuxt 3, tawk.to nuxt 4, nuxt live chat widget'
+          })
+        }
+      ]
+    }
+  },
+
   css: ['~/assets/css/main.css'],
 
   content: {
@@ -86,7 +126,6 @@ export default defineNuxtConfig({
     propertyId: '68496650ddf9cd19094b4530',
     widgetId: '1itfbfagd',
     embedId: '',
-    basePath: '',
     autoStart: true
   }
 })

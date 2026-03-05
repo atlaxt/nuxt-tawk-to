@@ -1,7 +1,7 @@
 ---
 seo:
-  title: Nuxt TawkTo
-  description: Easily integrate the Tawk.to live chat widget into your Nuxt 3 application using this lightweight module.
+  title: 'nuxt-tawk-to — Tawk.to Live Chat Module for Nuxt 3&4'
+  description: 'nuxt-tawk-to is the easiest Tawk.to integration for Nuxt 3&4. One-line install, TypeScript support, SSR-safe auto-injection. Add live chat to your Nuxt app in seconds.'
 ---
 
 ::u-page-hero{class="dark:bg-gradient-to-b from-neutral-900 to-neutral-950"}

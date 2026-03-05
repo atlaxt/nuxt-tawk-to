@@ -14,7 +14,15 @@ useSeoMeta({
   description,
   ogDescription: description,
   ogImage: '/nuxt-tawk-to-og_image.jpg',
+  ogUrl: 'https://nuxt-tawk-to.atlaxt.me/',
+  ogType: 'website',
   twitterImage: '/nuxt-tawk-to-og_image.jpg'
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://nuxt-tawk-to.atlaxt.me/' }
+  ]
 })
 </script>
 
