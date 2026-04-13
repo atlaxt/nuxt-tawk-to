@@ -14,14 +14,14 @@ useSeoMeta({
   description,
   ogDescription: description,
   ogImage: '/nuxt-tawk-to-og_image.jpg',
-  ogUrl: 'https://nuxt-tawk-to.atlaxt.me/',
+  ogUrl: 'https://nuxt-tawk-to.vercel.app/',
   ogType: 'website',
   twitterImage: '/nuxt-tawk-to-og_image.jpg'
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://nuxt-tawk-to.atlaxt.me/' }
+    { rel: 'canonical', href: 'https://nuxt-tawk-to.vercel.app/' }
   ]
 })
 </script>

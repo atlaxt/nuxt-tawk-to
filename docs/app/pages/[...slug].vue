@@ -23,7 +23,7 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
 
 const title = page.value.seo?.title || page.value.title
 const description = page.value.seo?.description || page.value.description
-const pageUrl = `https://nuxt-tawk-to.atlaxt.me${route.path}`
+const pageUrl = `https://nuxt-tawk-to.vercel.app${route.path}`
 
 useSeoMeta({
   title,

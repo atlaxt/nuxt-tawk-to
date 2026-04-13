@@ -7,7 +7,7 @@
 
 Nuxt module for integrating [Tawk.to](https://www.tawk.to) live chat widget. Works with Nuxt 3 and Nuxt 4.
 
-- [📖 &nbsp;Documentation](https://nuxt-tawk-to.atlaxt.me)
+- [📖 &nbsp;Documentation](https://nuxt-tawk-to.vercel.app)
 
 ## Quick Setup
 
@@ -32,7 +32,7 @@ export default defineNuxtConfig({
 
 That's it! The Tawk.to widget will be injected automatically. ✨
 
-For advanced usage (embedId, autoStart) and the full API reference, visit the [documentation](https://nuxt-tawk-to.atlaxt.me).
+For advanced usage (embedId, autoStart) and the full API reference, visit the [documentation](https://nuxt-tawk-to.vercel.app).
 
 ## Contribution
 

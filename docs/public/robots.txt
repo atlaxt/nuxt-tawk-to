@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nuxt-tawk-to.atlaxt.me/sitemap.xml
+Sitemap: https://nuxt-tawk-to.vercel.app/sitemap.xml

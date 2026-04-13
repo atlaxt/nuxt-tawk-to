@@ -22,7 +22,7 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#22c55e' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://nuxt-tawk-to.atlaxt.me/' }
+        { rel: 'canonical', href: 'https://nuxt-tawk-to.vercel.app/' }
       ],
       script: [
         {
@@ -35,7 +35,7 @@ export default defineNuxtConfig({
             'description': 'The easiest way to add Tawk.to live chat to any Nuxt application. Works with Nuxt 3 and Nuxt 4. Lightweight module with full TypeScript support, SSR-safe auto-injection, and the full Tawk.to JavaScript API.',
             'applicationCategory': 'DeveloperApplication',
             'operatingSystem': 'Any',
-            'url': 'https://nuxt-tawk-to.atlaxt.me/',
+            'url': 'https://nuxt-tawk-to.vercel.app/',
             'downloadUrl': 'https://www.npmjs.com/package/nuxt-tawk-to',
             'sameAs': [
               'https://github.com/atlaxt/nuxt-tawk-to',
@@ -91,7 +91,7 @@ export default defineNuxtConfig({
   },
 
   llms: {
-    domain: 'https://nuxt-tawk-to.atlaxt.me/',
+    domain: 'https://nuxt-tawk-to.vercel.app/',
     title: 'Nuxt TawkTo',
     description: 'This is the full documentation for the Nuxt TawkTo.',
     full: {
