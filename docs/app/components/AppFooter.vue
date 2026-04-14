@@ -12,11 +12,17 @@ const { footer } = useAppConfig()
       <UColorModeButton v-if="footer?.colorMode" />
 
       <template v-if="footer?.links">
-        <UButton
-          v-for="(link, index) of footer?.links"
-          :key="index"
-          v-bind="{ color: 'neutral', variant: 'ghost', ...link }"
-        />
+        <a
+          target="_blank"
+          href="https://atlaxt.me"
+          class="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity"
+        >
+          <UColorModeImage
+            class="h-8"
+            light="https://atlaxt.me/sign_black.png"
+            dark="https://atlaxt.me/sign_white.png"
+          />
+        </a>
       </template>
     </template>
   </UFooter>

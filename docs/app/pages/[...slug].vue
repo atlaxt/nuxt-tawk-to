@@ -23,7 +23,7 @@ const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
 
 const title = page.value.seo?.title || page.value.title
 const description = page.value.seo?.description || page.value.description
-const pageUrl = `https://nuxt-tawk-to.vercel.app${route.path}`
+const pageUrl = `https://nuxt-tawk-to.atlaxt.me${route.path}`
 
 useSeoMeta({
   title,
@@ -53,7 +53,7 @@ const links = computed(() => {
     })
   }
 
-  return [...links, ...(toc?.bottom?.links || [])].filter(Boolean)
+  return [...links, ...(toc?.bottom?.links || [])]?.filter(Boolean)
 })
 </script>
 
@@ -98,7 +98,7 @@ const links = computed(() => {
         >
           <div
             class="hidden lg:block space-y-6"
-            :class="{ '!mt-6': page.body?.toc?.links?.length }"
+            :class="{ 'mt-6!': page.body?.toc?.links?.length }"
           >
             <USeparator
               v-if="page.body?.toc?.links?.length"

@@ -1,10 +1,8 @@
-import { defineNuxtModule } from '@nuxt/kit'
+import { defineNuxtModule, addImportsDir, addPlugin, createResolver } from '@nuxt/kit'
 
 export interface ModuleOptions {
   propertyId: string
   widgetId: string
-  embedId?: string
-  autoStart?: boolean
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -16,8 +14,6 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {
     propertyId: '',
     widgetId: '',
-    embedId: '',
-    autoStart: true,
   },
   setup(options, nuxt) {
     if (!options.propertyId) {
@@ -30,19 +26,18 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    const basePath = 'embed.tawk.to'
-    const src = `https://${basePath}/${options.propertyId}/${options.widgetId}`
+    const { resolve } = createResolver(import.meta.url)
+
+    const src = `https://embed.tawk.to/${options.propertyId}/${options.widgetId}`
 
     nuxt.options.app.head ??= {}
     nuxt.options.app.head.script ??= []
+    nuxt.options.app.head.script.push({
+      innerHTML: 'window.Tawk_API=window.Tawk_API||{};window.Tawk_LoadStart=new Date();',
+    })
+    nuxt.options.app.head.script.push({ src, async: true, crossorigin: '' })
 
-    if (options.autoStart === false || options.embedId) {
-      const lines = ['var Tawk_API = Tawk_API || {};']
-      if (options.autoStart === false) lines.push('Tawk_API.autoStart = false;')
-      if (options.embedId) lines.push(`Tawk_API.embedded = '${options.embedId}';`)
-      nuxt.options.app.head.script.push({ innerHTML: lines.join('\n') })
-    }
-
-    nuxt.options.app.head.script.push({ src, async: true })
+    addPlugin(resolve('./runtime/plugin.client'))
+    addImportsDir(resolve('./runtime/composables'))
   },
 })

@@ -12,7 +12,7 @@ export default defineAppConfig({
     }
   },
   seo: {
-    siteName: 'Nuxt TawkTo'
+    siteName: 'nuxt-tawk-to'
   },
   header: {
     title: '',
@@ -25,6 +25,11 @@ export default defineAppConfig({
     search: true,
     colorMode: true,
     links: [{
+      'icon': 'i-simple-icons-npm',
+      'to': 'https://www.npmjs.com/package/nuxt-tawk-to',
+      'target': '_blank',
+      'aria-label': 'NPM'
+    }, {
       'icon': 'i-simple-icons-github',
       'to': 'https://github.com/atlaxt/nuxt-tawk-to',
       'target': '_blank',

@@ -7,9 +7,17 @@
 
 Nuxt module for integrating [Tawk.to](https://www.tawk.to) live chat widget. Works with Nuxt 3 and Nuxt 4.
 
-- [📖 &nbsp;Documentation](https://nuxt-tawk-to.vercel.app)
+- [📖 &nbsp;Documentation](https://nuxt-tawk-to.atlaxt.me)
 
-## Quick Setup
+## Features
+
+- Automatic widget injection
+- `useTawk()` composable with reactive state
+- Full TypeScript support via `nuxt-tawk-to/types`
+- SSR safe
+- Nuxt 3 & 4 compatible
+
+## Setup
 
 ```bash
 npm install nuxt-tawk-to
@@ -19,62 +27,167 @@ Add the module and your credentials to `nuxt.config.ts`:
 
 ```ts
 export default defineNuxtConfig({
-  modules: [
-    'nuxt-tawk-to'
-  ],
+  modules: ['nuxt-tawk-to'],
 
   tawkTo: {
-    propertyId: 'YOUR_PROPERTY_ID',
-    widgetId: 'YOUR_WIDGET_ID',
-  }
+    propertyId: 'your-tawk-property-id',
+    widgetId: 'your-widget-id',
+  },
 })
 ```
 
-That's it! The Tawk.to widget will be injected automatically. ✨
+That's it. The widget loads automatically.
 
-For advanced usage (embedId, autoStart) and the full API reference, visit the [documentation](https://nuxt-tawk-to.vercel.app).
+## useTawk()
 
-## Contribution
+The `useTawk()` composable is auto-imported and gives you full access to the Tawk.to API with reactive state.
 
-<details>
-  <summary>Local development</summary>
+```ts
+const tawk = useTawk()
+```
 
-  ```bash
-  # Install dependencies
-  npm install
+### Reactive State
 
-  # Generate type stubs
-  npm run dev:prepare
+These are Vue refs that update automatically as the widget state changes.
 
-  # Develop with the playground
-  npm run dev
+```ts
+const { isHidden, isMinimized, isMaximized, status, unreadCount } = useTawk()
+```
 
-  # Build the playground
-  npm run dev:build
+| Property | Type | Description |
+|---|---|---|
+| `isHidden` | `Ref<boolean>` | Whether the widget is hidden |
+| `isMinimized` | `Ref<boolean>` | Whether the widget is minimized |
+| `isMaximized` | `Ref<boolean>` | Whether the widget is maximized |
+| `status` | `Ref<'online' \| 'away' \| 'offline'>` | Current agent status |
+| `unreadCount` | `Ref<number>` | Number of unread messages |
 
-  # Run ESLint
-  npm run lint
+```vue
+<template>
+  <button @click="isHidden ? showWidget() : hideWidget()">
+    Chat <span v-if="unreadCount > 0">({{ unreadCount }})</span>
+  </button>
+  <span>{{ status }}</span>
+</template>
 
-  # Run Vitest
-  npm run test
-  npm run test:watch
+<script setup>
+const { isHidden, unreadCount, status, showWidget, hideWidget } = useTawk()
+</script>
+```
 
-  # Release new version
-  npm run release
-  ```
+### Actions
 
-</details>
+```ts
+const {
+  start,           // Start the widget
+  shutdown,        // Shut down the widget
+  maximize,        // Open the chat window
+  minimize,        // Minimize the chat window
+  toggle,          // Toggle open/minimized
+  popup,           // Open chat in a popup
+  showWidget,      // Show the widget bubble
+  hideWidget,      // Hide the widget bubble
+  toggleVisibility,// Toggle widget visibility
+  endChat,         // End the current chat
+} = useTawk()
+```
 
+### Getters
 
-<!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/nuxt-tawk-to/latest.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-version-href]: https://npmjs.com/package/nuxt-tawk-to
+```ts
+const {
+  getWindowType,    // () => 'inline' | 'widget'
+  getStatus,        // () => 'online' | 'away' | 'offline'
+  isChatMaximized,  // () => boolean
+  isChatMinimized,  // () => boolean
+  isChatHidden,     // () => boolean
+  isChatOngoing,    // () => boolean
+  isVisitorEngaged, // () => boolean
+  onLoaded,         // () => 1 | undefined
+  onBeforeLoaded,   // () => 1 | undefined
+  widgetPosition,   // () => 'br' | 'bl' | 'cr' | 'cl' | 'tr' | 'tl'
+} = useTawk()
+```
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-tawk-to.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-downloads-href]: https://npm.chart.dev/nuxt-tawk-to
+### Listeners
 
-[license-src]: https://img.shields.io/npm/l/nuxt-tawk-to.svg?style=flat&colorA=020420&colorB=00DC82
-[license-href]: https://npmjs.com/package/nuxt-tawk-to
+All listeners return a cleanup function. Call it in `onUnmounted` to avoid memory leaks.
 
-[nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt
-[nuxt-href]: https://nuxt.com
+```ts
+const { onLoad, onChatStarted, onStatusChange } = useTawk()
+
+onMounted(() => {
+  const cleanup = onLoad(() => {
+    console.log('Tawk.to loaded')
+  })
+
+  onUnmounted(cleanup)
+})
+```
+
+| Listener | Callback |
+|---|---|
+| `onLoad` | `() => void` |
+| `onBeforeLoad` | `() => void` |
+| `onStatusChange` | `(status: TawkStatus) => void` |
+| `onChatMaximized` | `() => void` |
+| `onChatMinimized` | `() => void` |
+| `onChatHidden` | `() => void` |
+| `onChatStarted` | `() => void` |
+| `onChatEnded` | `() => void` |
+| `onPrechatSubmit` | `(data) => void` |
+| `onOfflineSubmit` | `(data) => void` |
+| `onChatMessageVisitor` | `(message: string) => void` |
+| `onChatMessageAgent` | `(message: string) => void` |
+| `onChatMessageSystem` | `(message: string) => void` |
+| `onAgentJoinChat` | `(data) => void` |
+| `onAgentLeaveChat` | `(data) => void` |
+| `onChatSatisfaction` | `(satisfaction: number) => void` |
+| `onVisitorNameChanged` | `(name: string) => void` |
+| `onFileUpload` | `(link: string) => void` |
+| `onTagsUpdated` | `(data) => void` |
+| `onUnreadCountChanged` | `(count: number) => void` |
+
+### Setters
+
+```ts
+const { visitor, setAttributes, addEvent, addTags, removeTags, switchWidget } = useTawk()
+
+// Set visitor identity
+visitor({ name: 'John Doe', email: 'john@example.com', hash: 'secure-hash' })
+
+// Set custom attributes
+setAttributes({ plan: 'premium', accountId: '123' }, (err) => {
+  if (err) console.error(err)
+})
+
+// Track a custom event
+addEvent('purchase', { item: 'Pro Plan', value: 49 }, (err) => {})
+
+// Add tags to the conversation
+addTags(['vip', 'trial'], (err) => {})
+
+// Remove tags
+removeTags(['trial'], (err) => {})
+
+// Switch to a different widget
+switchWidget({ propertyId: 'new-id', widgetId: 'new-widget-id' })
+```
+
+## TypeScript
+
+All types are available via the `nuxt-tawk-to/types` subpath:
+
+```ts
+import type { TawkStatus, TawkVisitor, TawkWidgetPosition, UseTawk } from 'nuxt-tawk-to/types'
+```
+
+| Type | Description |
+|---|---|
+| `TawkStatus` | `'online' \| 'away' \| 'offline'` |
+| `TawkWindowType` | `'inline' \| 'widget'` |
+| `TawkWidgetPosition` | `'br' \| 'bl' \| 'cr' \| 'cl' \| 'tr' \| 'tl'` |
+| `TawkVisitor` | `{ name?, email?, hash? }` |
+| `TawkCustomStyle` | Widget visibility and z-index config |
+| `TawkAPI` | Full `window.Tawk_API` interface |
+| `UseTawk` | Return type of `useTawk()` |

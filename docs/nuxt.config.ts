@@ -22,7 +22,7 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#22c55e' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://nuxt-tawk-to.vercel.app/' }
+        { rel: 'canonical', href: 'https://nuxt-tawk-to.atlaxt.me/' }
       ],
       script: [
         {
@@ -35,7 +35,7 @@ export default defineNuxtConfig({
             'description': 'The easiest way to add Tawk.to live chat to any Nuxt application. Works with Nuxt 3 and Nuxt 4. Lightweight module with full TypeScript support, SSR-safe auto-injection, and the full Tawk.to JavaScript API.',
             'applicationCategory': 'DeveloperApplication',
             'operatingSystem': 'Any',
-            'url': 'https://nuxt-tawk-to.vercel.app/',
+            'url': 'https://nuxt-tawk-to.atlaxt.me/',
             'downloadUrl': 'https://www.npmjs.com/package/nuxt-tawk-to',
             'sameAs': [
               'https://github.com/atlaxt/nuxt-tawk-to',
@@ -91,12 +91,12 @@ export default defineNuxtConfig({
   },
 
   llms: {
-    domain: 'https://nuxt-tawk-to.vercel.app/',
-    title: 'Nuxt TawkTo',
-    description: 'This is the full documentation for the Nuxt TawkTo.',
+    domain: 'https://nuxt-tawk-to.atlaxt.me/',
+    title: 'nuxt-tawk-to',
+    description: 'Full documentation for nuxt-tawk-to v2 — the Tawk.to live chat module for Nuxt 3 & 4. Includes the useTawk() composable, reactive state, event listeners, setters, TypeScript types, and real-world examples.',
     full: {
-      title: 'Nuxt TawkTo - Full Documentation',
-      description: 'This is the full documentation for the Nuxt TawkTo.'
+      title: 'nuxt-tawk-to v2 — Full Documentation',
+      description: 'Complete documentation for nuxt-tawk-to v2: installation, useTawk() composable usage, reactive state, event listeners, setters (visitor, setAttributes, addEvent, addTags, switchWidget), TypeScript types, and examples.'
     },
     sections: [
       {
@@ -124,8 +124,6 @@ export default defineNuxtConfig({
      * └─────────────────────────────────────────────────────────────┘
      */
     propertyId: '68496650ddf9cd19094b4530',
-    widgetId: '1itfbfagd',
-    embedId: '',
-    autoStart: true
+    widgetId: '1itfbfagd'
   }
 })

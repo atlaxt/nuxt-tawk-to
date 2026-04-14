@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nuxt-tawk-to.vercel.app/</loc>
+    <loc>https://nuxt-tawk-to.atlaxt.me/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nuxt-tawk-to.vercel.app/getting-started</loc>
+    <loc>https://nuxt-tawk-to.atlaxt.me/getting-started</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nuxt-tawk-to.vercel.app/getting-started/installation</loc>
+    <loc>https://nuxt-tawk-to.atlaxt.me/getting-started/installation</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nuxt-tawk-to.vercel.app/getting-started/usage</loc>
+    <loc>https://nuxt-tawk-to.atlaxt.me/getting-started/usage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nuxt-tawk-to.vercel.app/essentials/api-usage</loc>
+    <loc>https://nuxt-tawk-to.atlaxt.me/essentials/api-usage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nuxt-tawk-to.vercel.app/essentials/typescript</loc>
+    <loc>https://nuxt-tawk-to.atlaxt.me/essentials/typescript</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
