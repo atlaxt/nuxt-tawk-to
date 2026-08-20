@@ -188,6 +188,18 @@ import type { TawkStatus, TawkVisitor, TawkWidgetPosition, UseTawk } from 'nuxt-
 | `TawkWindowType` | `'inline' \| 'widget'` |
 | `TawkWidgetPosition` | `'br' \| 'bl' \| 'cr' \| 'cl' \| 'tr' \| 'tl'` |
 | `TawkVisitor` | `{ name?, email?, hash? }` |
-| `TawkCustomStyle` | Widget visibility and z-index config |
+| `TawkSwitchWidgetData` | `{ propertyId, widgetId }` |
+| `TawkCallback` | `(error: Error \| null) => void` |
 | `TawkAPI` | Full `window.Tawk_API` interface |
 | `UseTawk` | Return type of `useTawk()` |
+
+<!-- Badges -->
+
+[npm-version-src]: https://img.shields.io/npm/v/nuxt-tawk-to/latest.svg?style=flat&colorA=020420&colorB=00DC82
+[npm-version-href]: https://npmjs.com/package/nuxt-tawk-to
+[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-tawk-to.svg?style=flat&colorA=020420&colorB=00DC82
+[npm-downloads-href]: https://npmjs.com/package/nuxt-tawk-to
+[license-src]: https://img.shields.io/npm/l/nuxt-tawk-to.svg?style=flat&colorA=020420&colorB=00DC82
+[license-href]: https://npmjs.com/package/nuxt-tawk-to
+[nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js
+[nuxt-href]: https://nuxt.com

@@ -1,6 +1,6 @@
 {
   "name": "nuxt-tawk-to",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Nuxt module for integrating Tawk.to live chat widget.",
   "keywords": [
     "nuxt",
@@ -46,18 +46,17 @@
   ],
   "scripts": {
     "prepack": "nuxt-module-build build",
-    "dev": "npm run dev:prepare && nuxt dev playground",
-    "dev:build": "nuxt build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "dev": "pnpm run dev:prepare && nuxt dev ../playground",
+    "dev:build": "nuxt build ../playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare ../playground",
+    "release": "pnpm run lint && pnpm run test && pnpm run prepack && changelogen --release && pnpm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+    "test:types": "vue-tsc --noEmit && cd ../playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": ">=3.0.0",
-    "@tawk.to/tawk-messenger-vue-3": "^1.0.3"
+    "@nuxt/kit": ">=3.0.0"
   },
   "devDependencies": {
     "@nuxt/devtools": "^3.2.4",

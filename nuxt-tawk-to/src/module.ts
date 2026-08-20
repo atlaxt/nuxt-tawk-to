@@ -34,8 +34,9 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.app.head.script ??= []
     nuxt.options.app.head.script.push({
       innerHTML: 'window.Tawk_API=window.Tawk_API||{};window.Tawk_LoadStart=new Date();',
+      tagPriority: 1,
     })
-    nuxt.options.app.head.script.push({ src, async: true, crossorigin: '' })
+    nuxt.options.app.head.script.push({ src, async: true, crossorigin: '', tagPriority: 2 })
 
     addPlugin(resolve('./runtime/plugin.client'))
     addImportsDir(resolve('./runtime/composables'))

@@ -8,22 +8,6 @@ export type TawkStatus = 'online' | 'away' | 'offline'
 export type TawkWindowType = 'inline' | 'widget'
 export type TawkWidgetPosition = 'br' | 'bl' | 'cr' | 'cl' | 'tr' | 'tl'
 
-export interface TawkCustomStyle {
-  visibility?: {
-    desktop?: {
-      xOffset?: string | number
-      yOffset?: string | number
-      position?: TawkWidgetPosition
-    }
-    mobile?: {
-      xOffset?: string | number
-      yOffset?: string | number
-      position?: TawkWidgetPosition
-    }
-  }
-  zIndex?: string | number
-}
-
 export interface TawkSwitchWidgetData {
   propertyId: string
   widgetId: string
@@ -63,11 +47,6 @@ export interface TawkAPI {
   addTags: (tags: string[], callback?: TawkCallback) => void
   removeTags: (tags: string[], callback?: TawkCallback) => void
   switchWidget: (data: TawkSwitchWidgetData, callback?: () => void) => void
-
-  // Config (pre-load)
-  autoStart?: boolean
-  embedded?: string
-  customStyle?: TawkCustomStyle
 }
 
 export interface UseTawk {

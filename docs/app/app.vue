@@ -24,9 +24,9 @@ useSeoMeta({
   titleTemplate: `%s - ${seo?.siteName}`,
   ogSiteName: seo?.siteName,
   ogType: 'website',
-  ogImage: '/nuxt-tawk-to-og_image.jpg',
+  ogImage: '/og.jpg',
   twitterCard: 'summary_large_image',
-  twitterImage: '/nuxt-tawk-to-og_image.jpg',
+  twitterImage: '/og.jpg',
   twitterSite: '@atlaxt'
 })
 
